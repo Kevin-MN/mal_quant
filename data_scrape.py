@@ -11,7 +11,7 @@ def main():
     mal_seasonal = re.get('https://myanimelist.net/anime/season')
 
     #turn into Beautiful soup object for parsing
-    mal_seasonal_html = bs.BeautifulSoup(mal_seasonal.text)
+    mal_seasonal_html = bs.BeautifulSoup(mal_seasonal.text, features = 'html.parser')
 
     #create sequential data arrays
     html_seasonal_titles = mal_seasonal_html.find_all('a', {'class':'link-title'})
